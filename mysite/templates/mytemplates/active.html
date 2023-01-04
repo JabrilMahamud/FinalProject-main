@@ -1,0 +1,45 @@
+{% extends "mytemplates/s3metadata.html" %}
+{% block title %} Active {% endblock %}
+
+{% load static %}
+{% block body %}
+
+    <br>
+
+<div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                Active Accounts
+                            </div>
+                            <div class="card-body">
+                                <table id="datatablesSimple">
+                                    <thead>
+                                        <tr>
+                                            <th>Account Name</th>
+                                            <th>Account No</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+<!--                                    <tfoot>-->
+<!--                                        <tr>-->
+<!--                                            <th>Name</th>-->
+<!--                                            <th>Position</th>-->
+<!--                                            <th>Office</th>-->
+<!--                                            <th>Age</th>-->
+<!--                                            <th>Start date</th>-->
+<!--                                            <th>Salary</th>-->
+<!--                                        </tr>-->
+<!--                                    </tfoot>-->
+                                    <tbody>
+                                      {% for i in Deactive %}
+                                        <tr>
+                                            <td>{{ i.account_name }}</td>
+                                            <td>{{ i.account_no }}</td>
+                                            <td>Active</td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+    {% endblock body %}
